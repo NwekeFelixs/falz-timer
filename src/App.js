@@ -8,7 +8,7 @@ function App() {
   const [timerMinutes, setTimerMinutes] = useState('00');
   const [timerSeconds, setTimerSeconds] = useState('00');
 
-  let interval = useRef();
+  const interval = useRef();
 
   const startTimer = () => {
     const countdownDate = new Date('June 7, 2024 00:00:00').getTime();
@@ -27,10 +27,10 @@ function App() {
       if (distance < 0) {
         clearInterval(interval.current);
       } else {
-        setTimerDays(days);
-        setTimerHours(hours);
-        setTimerMinutes(minutes);
-        setTimerSeconds(seconds);
+        setTimerDays(days.toString().padStart(2, '0'));
+        setTimerHours(hours.toString().padStart(2, '0'));
+        setTimerMinutes(minutes.toString().padStart(2, '0'));
+        setTimerSeconds(seconds.toString().padStart(2, '0'));
       }
     }, 1000);
   };

@@ -41,6 +41,7 @@ body {
 
 .timer-icon {
   font-size: 8em;
+  animation: pulse 0.7s infinite;
 }
 
 h2 {
@@ -50,6 +51,7 @@ h2 {
 
 .timer  .text-content p {
   color: #f8f8f8;
+  animation: fadeIn 0.8s ease-in;
 }
 
 .timer .timer-content {
@@ -87,6 +89,37 @@ button:hover{
   background: #000;
   border: #000;
 }
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
 
 
 @media screen  and (max-width: 480px){
